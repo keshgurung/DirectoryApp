@@ -8,6 +8,8 @@
 import UIKit
 
 class RoomsViewController: UIViewController {
+    
+    lazy var activityIndicator = UIActivityIndicatorView()
 
     let roomVM = RoomsViewModel(networkManager: NetworkManager())
     
@@ -22,11 +24,12 @@ class RoomsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpUI()
-    
+        showSpinner()
         
         self.roomVM.bind {
             DispatchQueue.main.async {
                 self.roomsTable.reloadData()
+                self.stopSpinner()
             }
         }
         
@@ -35,12 +38,26 @@ class RoomsViewController: UIViewController {
     
     private func setUpUI(){
         self.view.backgroundColor = .systemGray5
-        self.title = "Rooms"
+        let roomLabel = NSLocalizedString("roomLabel", comment: "title for room")
+        self.title = NSLocalizedString(roomLabel, comment: "title for room")
         self.view.addSubview(self.roomsTable)
         self.roomsTable.bindToSuperView()
         
     }
+    func showSpinner(){
+        
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.style = .large
+        activityIndicator.startAnimating()
+        self.view.isUserInteractionEnabled = false
+        view.addSubview(activityIndicator)
+    }
     
+    private func stopSpinner(){
+        self.activityIndicator.stopAnimating()
+        self.view.isUserInteractionEnabled = true
+    }
 }
 
 extension RoomsViewController: UITableViewDataSource {

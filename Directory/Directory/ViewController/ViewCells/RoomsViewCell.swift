@@ -19,6 +19,7 @@ class RoomsViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         label.text = "id"
+        label.isAccessibilityElement = true
         return label
     }()
     
@@ -26,6 +27,7 @@ class RoomsViewCell: UITableViewCell {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
+        label.isAccessibilityElement = true
         label.text = "occupancy"
         return label
     }()
@@ -34,6 +36,7 @@ class RoomsViewCell: UITableViewCell {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
+        label.isAccessibilityElement = true
         label.text = "yes"
         return label
     }()
@@ -42,6 +45,7 @@ class RoomsViewCell: UITableViewCell {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
+        label.isAccessibilityElement = true
         label.text = "created"
         return label
     }()

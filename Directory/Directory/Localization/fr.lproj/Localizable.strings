@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Directory
+
+  Created by Kesh Gurung on 13/09/2022.
+  
+*/
+
+"peopleLabel" = "Personnes";
+"roomLabel" = "Piéces";
+"id" = "identifiant";

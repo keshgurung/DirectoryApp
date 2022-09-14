@@ -40,7 +40,8 @@ class PeopleViewController: UIViewController {
     
     private func setUpUI(){
         self.view.backgroundColor = .systemGray5
-        self.title = "People"
+        let peopleLabel = NSLocalizedString("peopleLabel", comment: "title for people")
+        self.title = NSLocalizedString(peopleLabel, comment: "title for people")
         self.view.addSubview(self.peopleTable)
         self.peopleTable.bindToSuperView()
         

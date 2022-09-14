@@ -30,6 +30,7 @@ class PeopleViewCell: UITableViewCell {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
+        label.isAccessibilityElement = true
         label.text = "name"
         return label
     }()
@@ -38,6 +39,7 @@ class PeopleViewCell: UITableViewCell {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
+        label.isAccessibilityElement = true
         label.text = "title"
         return label
     }()

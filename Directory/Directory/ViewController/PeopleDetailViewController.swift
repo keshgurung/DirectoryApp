@@ -66,6 +66,9 @@ class PeopleDetailViewController: UIViewController {
         
         topJobLabel.isAccessibilityElement = true
         topJobLabel.accessibilityHint = "employer's job title"
+        
+        topEmailLabel.isAccessibilityElement = true
+        topEmailLabel.accessibilityHint = "employer's email address"
     }
     private func tapDetailView(){
         self.topNameLabel.text = "Name: \(self.peopleVM.firstName(for: index) ?? "x") \(self.peopleVM.lastName(for: index) ?? "x")"
